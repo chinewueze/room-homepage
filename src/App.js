@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import firstSlide from './assets/Images/desktop-image-hero-1.jpg'
@@ -72,6 +73,9 @@ export default function App() {
   }, []);
   return (
     <div className="overflow-x-hidden">
+      <Helmet>
+        <title>Home page</title>
+      </Helmet>
       <div className="flex lg:flex-row sm:flex-col w-screen lg:h-[75vh]">
         <div className=" relative w-7/12 m-0 p-0 ">
           <img src={images[currentIndex]} className="shrink-0 w-[100%] h-[100%] lg:flex sm:hidden" />
@@ -147,7 +151,7 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className=" lg:w-2/5 sm:w-screen relative "  data-aos="flip-up">
+        <div className=" lg:w-2/5 sm:w-screen relative " data-aos="flip-up">
           <div className=" lg:pt-20 sm:pt-9 lg:mx-9 sm:px-14 shrink-0 ">
             {texts[currentIndex]}
             <div className=" flex my-3 sm:my-11  hover:text-neutral-coolgray ">
@@ -169,7 +173,7 @@ export default function App() {
       </div>
       <div className="lg:w-screen lg:h-[25vh] flex lg:flex-row sm:flex-col">
         <div className="lg:w-[30%] h-full">
-          <img src={bgDark} className=" h-full sm:w-full " data-aos="zoom-in-right"/>
+          <img src={bgDark} className=" h-full sm:w-full " data-aos="zoom-in-right" />
         </div>
         <div className="lg:w-3/6 py-5 mx-auto " data-aos="zoom-in-up">
           <h1 className="text-lg font-bold text-left mb-1 sm:text-center">
@@ -184,7 +188,7 @@ export default function App() {
           </p>
         </div>
         <div >
-          <img src={bgLight} className="h-full sm:w-full"  />
+          <img src={bgLight} className="h-full sm:w-full" />
         </div>
       </div>
     </div>

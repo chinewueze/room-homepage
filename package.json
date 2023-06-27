@@ -1,7 +1,6 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://chinewueze.github.io/lorem-reg",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.15",
