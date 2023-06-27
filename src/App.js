@@ -72,7 +72,7 @@ export default function App() {
     AOS.init();
   }, []);
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden" id="home">
       <Helmet>
         <title>Home page</title>
       </Helmet>
@@ -101,15 +101,15 @@ export default function App() {
           <div className="hidden lg:flex absolute top-5 text-white">
             <ul className="flex font-semibold mx-3 " >
               <li className="mx-7">room</li>
-              <li className="mx-3 hover:pb-2 hover:border-b-4">home</li>
-              <li className="mx-3 hover:pb-2 hover:border-b-4">shop</li>
-              <li className="mx-3 hover:pb-2 hover:border-b-4">about</li>
+              <li className="mx-3 hover:pb-2 hover:border-b-4"> <a href="#home"> home </a> </li>
+              <li className="mx-3 hover:pb-2 hover:border-b-4"> <a href="#shop"> shop </a> </li>
+              <li className="mx-3 hover:pb-2 hover:border-b-4"> <a href="#about"> about </a> </li>
               <li className="mx-3 hover:pb-2 hover:border-b-4">contact</li>
             </ul>
           </div>
           {isMenuOpen && (
             <div className="fixed top-0 left-0 h-full w-full  text-black p-4">
-              <div className="w-full h-[155px] bg-white fixed  top-0 left-0 pt-5 ">
+              <div className="w-full h-[15vh] bg-white fixed  top-0 left-0 py-7 ">
                 <button
                   className="absolute top-0 left-0 m-4 mt-7 p-2 "
                   onClick={toggleMenu}
@@ -130,19 +130,19 @@ export default function App() {
                   </svg>
                 </button>
                 <ul className="flex ml-20 mt-3 font-semibold text-lg ">
-                  <li className="mx-4 ">home</li>
-                  <li className="mx-4">shop</li>
-                  <li className="mx-4">about</li>
+                  <li className="mx-4 "> <a href="#home"> home </a> </li>
+                  <li className="mx-4"> <a href="#shop"> shop </a> </li>
+                  <li className="mx-4"> <a href="#about"> about </a> </li>
                   <li className="mx-4">contact</li>
                 </ul>
               </div>
             </div>
           )}
         </div>
-        <div>
-          <img src={imageMobile[currentIndex]} className="shrink-0 w-full h-96 lg:hidden" />
+        <div className="sm:h-[38vh]">
+          <img src={imageMobile[currentIndex]} className="shrink-0 w-full h-full lg:hidden" />
           <h1 className="absolute top-7 left-[45%] lg:hidden font-semibold text-lg text-white"> room</h1>
-          <div className="h-16 flex absolute lg:hidden right-0 top-[33.8%] cursor-pointer ">
+          <div className="h-16 flex absolute lg:hidden right-0 top-[32.25%] cursor-pointer ">
             <div onClick={prevSlide} className=" w-20 pl-7 py-5 bg-black active:bg-neutral-coolgray   ">
               <img src={leftSlide} alt="Left Slide" />
             </div>
@@ -152,9 +152,9 @@ export default function App() {
           </div>
         </div>
         <div className=" lg:w-2/5 sm:w-screen relative " data-aos="flip-up">
-          <div className=" lg:pt-20 sm:pt-9 lg:mx-9 sm:px-14 shrink-0 ">
+          <div className=" lg:pt-20 sm:pt-9 lg:mx-9 sm:px-14 shrink-0 " id="shop">
             {texts[currentIndex]}
-            <div className=" flex my-3 sm:my-11  hover:text-neutral-coolgray ">
+            <div className=" flex my-3 sm:my-11  hover:text-neutral-coolgray " >
               <h1 className=" tracking-widest font-semibold">
                 <a href="#" > SHOP NOW </a>
               </h1>
@@ -175,7 +175,7 @@ export default function App() {
         <div className="lg:w-[30%] h-full">
           <img src={bgDark} className=" h-full sm:w-full " data-aos="zoom-in-right" />
         </div>
-        <div className="lg:w-3/6 py-5 mx-auto " data-aos="zoom-in-up">
+        <div className="lg:w-3/6 py-5 mx-auto " data-aos="zoom-in-up" id="about">
           <h1 className="text-lg font-bold text-left mb-1 sm:text-center">
             ABOUT OUR FURNITURE
           </h1>
